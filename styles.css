@@ -718,6 +718,85 @@ body::-webkit-scrollbar-thumb:hover {
     font-size: 1.1rem;
 }
 
+/* --- Animated Share Links Section --- */
+.share-links-container {
+    margin-top: 25px;
+    padding: 18px 10px 10px 10px;
+    background: linear-gradient(120deg, rgba(212,175,55,0.13) 60%, rgba(255,255,255,0.07) 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(212,175,55,0.13), 0 1.5px 8px rgba(0,0,0,0.08);
+    animation: fadeInUp 1.2s cubic-bezier(.23,1.01,.32,1) 0.2s both;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.share-links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.share-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(100deg, #fffbe6 0%, #ffe066 60%, #d4af37 100%);
+    color: #1a3a2a;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 2px 12px rgba(212,175,55,0.13);
+    transition: transform 0.18s cubic-bezier(.23,1.01,.32,1), box-shadow 0.18s, background 0.18s;
+    position: relative;
+    outline: none;
+}
+
+.share-btn i {
+    font-size: 1.3rem;
+    transition: transform 0.25s cubic-bezier(.23,1.01,.32,1);
+}
+
+.share-btn:hover, .share-btn:focus {
+    background: linear-gradient(100deg, #ffe066 0%, #fffbe6 60%, #d4af37 100%);
+    color: #0f2e1f;
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 6px 24px 0 rgba(212,175,55,0.22);
+    text-decoration: none;
+}
+
+.share-btn:hover i, .share-btn:focus i {
+    animation: iconBounce 0.6s;
+}
+
+@keyframes iconBounce {
+    0%   { transform: translateY(0); }
+    30%  { transform: translateY(-7px) scale(1.2); }
+    50%  { transform: translateY(2px) scale(0.95); }
+    70%  { transform: translateY(-3px) scale(1.08); }
+    100% { transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+    .share-links-row {
+        gap: 10px;
+    }
+    .share-btn {
+        font-size: 0.93rem;
+        padding: 9px 10px;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .invitation-container {
